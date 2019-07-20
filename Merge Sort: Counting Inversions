@@ -1,0 +1,100 @@
+package com.ingrumID.INGRUM.android.models;
+
+import java.io.Serializable;
+
+public class Socials implements Serializable {
+    private String email;
+    private String phoneNumber;
+    private String facebook;
+    private String instagram;
+    private String linkedin;
+    private String snapchat;
+    private String twitter;
+
+    public  Socials()
+    {
+        this.email = "No";
+        this.phoneNumber = "No";
+        this.facebook = "No";
+        this.instagram = "No";
+        this.linkedin = "No";
+        this.snapchat = "No";
+        this.twitter="No";
+    }
+    public Socials(String s){
+        this.email = s;
+        this.phoneNumber = s;
+        this.facebook = s;
+        this.instagram = s;
+        this.linkedin = s;
+        this.snapchat = s;
+        this.twitter=s;
+
+    }
+    public Socials(String email, String phoneNumber, String facebook, String instagram, String linkedin, String snapchat, String twitter) {
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.facebook = facebook;
+        this.instagram = instagram;
+        this.linkedin = linkedin;
+        this.snapchat = snapchat;
+        this.twitter=twitter;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setLinkedin(String linkedin) {
+        this.linkedin = linkedin;
+    }
+
+    public String getLinkedin() {
+        return linkedin;
+    }
+
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getFacebook() {
+        return facebook;
+    }
+
+    public void setFacebook(String facebook) {
+        this.facebook = facebook;
+    }
+
+    public String getInstagram() {
+        return instagram;
+    }
+
+    public void setInstagram(String instagram) {
+        this.instagram = instagram;
+    }
+
+    public String getSnapchat() {
+        return snapchat;
+    }
+
+    public void setSnapchat(String snapchat) {
+        this.snapchat = snapchat;
+    }
+
+    public String getTwitter() {
+        return twitter;
+    }
+
+    public void setTwitter(String twitter) {
+        this.twitter = twitter;
+    }
+}

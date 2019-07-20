@@ -1,0 +1,25 @@
+function repeatedString(s, n) {
+
+  var temp=s;
+  var len=s.length;
+
+  while(s.length+len<n){
+    s= s+temp;
+  }
+  temp=s;
+  for(let i=0;i<n-s.length;i++){
+    s=s+temp[i];
+  }
+  var count=0;
+  for(let i=0;i<s.length;i++){
+    if(s[i]=='a'){
+      count++;
+    }
+  }
+
+  return count;
+
+
+}
+
+repeatedString('a',1000000000000);

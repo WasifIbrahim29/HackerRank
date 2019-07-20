@@ -1,0 +1,20 @@
+function sockMerchant(n, ar) {
+
+    const pairs = new Set();
+    let count = 0;
+
+    for (let i = 0; i < n; i++){
+        if (!pairs.has(ar[i])) {
+          pairs.add(ar[i]);
+        }
+        else {
+          count++;
+          pairs.delete(ar[i]);
+        }
+    }
+
+    return count;
+
+}
+sockMerchant(9,[10,20,20,10,10,30,50,10,20]);
+

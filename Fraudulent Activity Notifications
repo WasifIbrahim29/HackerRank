@@ -1,0 +1,97 @@
+package com.ingrumID.INGRUM.android.database;
+
+/**
+ * Created by Taha Malik on 01/02/2019.
+ **/
+@SuppressWarnings({"unused","WeakerAccess"})
+public class DatabaseSchema {
+
+
+    public static class UserTable
+    {
+        public final static String NAMEOFTABLE = "UserTable";
+        public final static String INGRUMCODE = "ingrumCode";
+        public final static String NAME = "name";
+        public final static String EMAIL = "email";
+        public final static String FACEBOOK = "facebook";
+        public final static String IMAGE_LINK = "image_link";
+        public final static String INGRUMSCORE = "ingrumScore";
+        public final static String INSTAGRAM = "instagram";
+        public final static String LINKEDIN = "linkedin";
+        public final static String PHONENO = "phoneNumber";
+        public final static String SNAPCHAT = "snapchat";
+        public final static String TWITTER = "twitter";
+        public final static String FRIENDS_EMAIL = "friends_email";
+        public final static String FRIENDS_FACEBOOK = "friends_facebook";
+        public final static String FRIENDS_INSTAGRAM = "friends_instagram";
+        public final static String FRIENDS_LINKEDIN = "friends_linkedin";
+        public final static String FRIENDS_PHONENO = "friends_phoneNo";
+        public final static String FRIENDS_SNAPCHAT = "friends_snapchat";
+        public final static String FRIENDS_TWITTER = "friends_twitter";
+        public final static String CUSTOM_EMAIL = "custom_email";
+        public final static String CUSTOM_FACEBOOK = "custom_facebook";
+        public final static String CUSTOM_INSTAGRAM = "custom_instagram";
+        public final static String CUSTOM_LINKEDIN = "custom_linkedin";
+        public final static String CUSTOM_PHONENO = "custom_phoneNo";
+        public final static String CUSTOM_SNAPCHAT = "custom_snapchat";
+        public final static String CUSTOM_TWITTER = "custom_twitter";
+        public final static String CORPORATE_EMAIL = "corporate_email";
+        public final static String CORPORATE_FACEBOOK = "corporate_facebook";
+        public final static String CORPORATE_INSTAGRAM = "corporate_instagram";
+        public final static String CORPORATE_LINKEDIN = "corporate_linkedin";
+        public final static String CORPORATE_PHONENO = "corporate_phoneNo";
+        public final static String CORPORATE_SNAPCHAT = "corporate_snapchat";
+        public final static String CORPORATE_TWITTER = "corporate_twitter";
+        public final static String[] COLS = {INGRUMCODE,NAME,EMAIL,FACEBOOK,SNAPCHAT,TWITTER,LINKEDIN,PHONENO,
+                IMAGE_LINK,INGRUMSCORE,INSTAGRAM,FRIENDS_EMAIL,FRIENDS_FACEBOOK,FRIENDS_INSTAGRAM,FRIENDS_LINKEDIN,
+                FRIENDS_PHONENO,FRIENDS_SNAPCHAT,FRIENDS_TWITTER,CUSTOM_EMAIL,CUSTOM_FACEBOOK,CUSTOM_INSTAGRAM,CUSTOM_LINKEDIN,
+                CUSTOM_PHONENO,CUSTOM_SNAPCHAT,CUSTOM_TWITTER,CORPORATE_EMAIL,CORPORATE_FACEBOOK,CORPORATE_INSTAGRAM,CORPORATE_LINKEDIN,
+                CORPORATE_PHONENO,CORPORATE_SNAPCHAT,CORPORATE_TWITTER};
+
+    }
+    public static class FriendsTable
+    {
+        public final static String NAMEOFTABLE = "FriendsTable";
+        public final static String INGRUMCODE = "ingrumCode";
+        public final static String NAME = "name";
+        public final static String EMAIL = "email";
+        public final static String FACEBOOK = "facebook";
+        public final static String IMAGE_LINK = "image_link";
+        public final static String INSTAGRAM = "instagram";
+        public final static String LINKEDIN = "linkedin";
+        public final static String PHONENO = "phoneNumber";
+        public final static String SNAPCHAT = "snapchat";
+        public final static String TWITTER = "twitter";
+        public final static String[] COLS = {INGRUMCODE,NAME,EMAIL,FACEBOOK,SNAPCHAT,TWITTER,LINKEDIN,PHONENO,
+                IMAGE_LINK,INSTAGRAM};
+
+    }
+    public static class RecentTable
+    {
+        public final static String NAMEOFTABLE = "RecentTable";
+        public final static String INGRUMCODE = "ingrumCode";
+        public final static String NAME = "name";
+        public final static String EMAIL = "email";
+        public final static String FACEBOOK = "facebook";
+        public final static String IMAGE_LINK = "image_link";
+        public final static String INSTAGRAM = "instagram";
+        public final static String LINKEDIN = "linkedin";
+        public final static String PHONENO = "phoneNumber";
+        public final static String SNAPCHAT = "snapchat";
+        public final static String TWITTER = "twitter";
+        public final static String[] COLS = {INGRUMCODE,NAME,EMAIL,FACEBOOK,SNAPCHAT,TWITTER,LINKEDIN,PHONENO,
+                IMAGE_LINK,INSTAGRAM};
+
+    }
+
+    public static class IdentificationToken
+    {
+        public final static String NAMEOFTABLE = "IdentificationToken";
+        public final static String INGRUMCODE = "ingrumCode";
+        public final static String TOKEN = "token";
+        public final static String[] COLS = {INGRUMCODE,TOKEN};
+
+    }
+
+}
+

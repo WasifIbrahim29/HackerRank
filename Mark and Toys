@@ -1,0 +1,72 @@
+private void acceptRequest(final RequestedUser n1)
+    {
+        SharedPreferences sharedpref=context.getSharedPreferences("ingrum", Context.MODE_PRIVATE);
+        final String ingrumCode=sharedpref.getString("code","");
+
+
+        Thread thread = new Thread(new Runnable() {
+            public void run() {
+
+                String url= "http://192.168.10.6:8080/user/userDetails/"+ ingrumCode;
+
+                GetExample example = new GetExample();
+
+                MyDatabase po= MyDatabase.getInstance(getContext());
+
+                try {
+                    final String response = example.run(url,po.getToken(ingrumCode));
+                    JSONObject Jobject = new JSONObject(response);
+
+                    String thisObject=Jobject.getString("user");
+
+                    final ObjectMapper mapper = new ObjectMapper();
+                    try {    // read from file
+                        final User userAt = mapper.readValue(thisObject, User.class);
+
+                        completeRequest(userAt,n1);
+                        getInformation(userAt,n1);
+                        JsonObject jsonObject= new JsonObject();
+                        jsonObject.addProperty("ingrumCode",n1.getIngrumCode());
+
+                        final JSONObject request;
+
+                        Gson gson = new Gson();
+                        String jsonString = gson.toJson(jsonObject);
+                        try {
+                            request = new JSONObject(jsonString);
+
+
+                            Thread thread = new Thread(new Runnable() {
+                                public void run() {
+
+
+                                    MyDatabase po= MyDatabase.getInstance(getContext());
+
+                                    PostExample.deleteRequest("http://192.168.10.6:8080/sendingRequest/rejectRequest/"+ userAt.getIngrumCode(),request,po.getToken(ingrumCode));
+
+                                }
+                            });
+                            thread.start();
+
+
+                        } catch (JSONException e) {
+                            // TODO Auto-generated catch block
+                            e.printStackTrace();
+                        }
+
+
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        thread.start();
